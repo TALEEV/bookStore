@@ -49,8 +49,7 @@ public class BookController {
     @PostMapping("/book")
     public ResponseEntity<Book> createBook(@RequestBody final Book book) {
         System.out.println("BookName: " + book.getName() + " BookDescription: " + book.getDescription() + " BookAuhtor: " + book.getAuthor()
-                + " BookPrice: " + book.getPrice()
-                + " BookISBN: " + book.getIsbn());
+                + " BookPrice: " + book.getPrice());
         final Book bookResponse = bookService.saveBook(book);
         return ResponseEntity.status(HttpStatus.OK).body(bookResponse);
     }
